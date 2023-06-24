@@ -1,0 +1,12 @@
+def issortedbetter(a,si):
+    l = len(a)
+    if si== l-1 or si == l:
+        return True
+    if a[si] > a[si + 1]:
+        return False
+    issmallerpartsorted = issortedbetter(a, si+ 1)
+    return issmallerpartsorted
+
+a=[1,5,7,9,]
+issortedbetter(a,3)
+#True
