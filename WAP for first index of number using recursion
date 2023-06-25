@@ -1,0 +1,11 @@
+def find_index(arr, num, i=0):
+    if i == len(arr):
+        return -1
+    elif arr[i] == num:
+        return i
+    else:
+        return find_index(arr, num, i+1)
+
+a=(2,4,9,5,8,7)
+find_index(a,2,i=0)
+#0
