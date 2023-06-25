@@ -1,0 +1,11 @@
+def removeduplicate(s):
+    if len(s)<2:
+        return s
+    if s[0]==s[1]:
+        return removeduplicate(s[1:])
+    else:
+        return s[0]+removeduplicate(s[1:])
+s='aaabbcccdddeee'
+result=removeduplicate(s)
+print(result)
+#abcbafefra
