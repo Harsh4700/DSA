@@ -1,0 +1,7 @@
+def geometric_sum(k):
+    if k == 0:
+        return 1
+    else:
+        return 1 + 0.5 * geometric_sum(k - 1)
+
+def geometric_sum(3)
