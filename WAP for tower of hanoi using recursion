@@ -1,0 +1,24 @@
+def tower_hanoi(n,a,b,c):
+    if n==1:
+        print("move 1st disk from",a,"to",c)
+        return
+    tower_hanoi(n-1,a,c,b)
+    print("move",n,"th disk from",a,"to",c)
+    tower_hanoi(n-1,b,a,c)
+
+tower_hanoi(4,"p","q","r")
+##move 1st disk from p to q
+move 2 th disk from p to r
+move 1st disk from q to r
+move 3 th disk from p to q
+move 1st disk from r to p
+move 2 th disk from r to q
+move 1st disk from p to q
+move 4 th disk from p to r
+move 1st disk from q to r
+move 2 th disk from q to p
+move 1st disk from r to p
+move 3 th disk from q to r
+move 1st disk from p to q
+move 2 th disk from p to r
+move 1st disk from q to r##
