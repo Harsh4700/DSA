@@ -1,0 +1,10 @@
+def multiplyrecursive(m,n):
+    if n==0:
+        return 0
+    elif n<0:
+        return -multiplyrecursive(m,-n)
+    else:
+        return m + multiplyrecursive(m,n-1)
+
+multiplyrecursive(4,5)
+#20
