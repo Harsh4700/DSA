@@ -1,0 +1,9 @@
+def stringtointeger(s):
+    if len(s) == 0:
+        return 0
+    digit = int(s[0])
+    remaining_string = s[1:]
+    return digit + 10 * stringtointeger(remaining_string)
+
+s="12345789"
+stringtointeger(s)
