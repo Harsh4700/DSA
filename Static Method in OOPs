@@ -1,0 +1,21 @@
+class Student:
+    passingpercentage=40
+    def studentDetails(self):
+        self.name= "Harsh"
+        print("Name=",self.name)
+        self.percentage=80
+        print("percentage=",self.percentage)
+        pass
+    def ispassed(self):
+        if self.percentage>Student.passingpercentage:
+            print("student is passed")
+        else:
+            print("student is not passed")
+            
+    @staticmethod
+    def Welcometoschool():
+        print("Hey!Welcome to school")
+s1=Student()
+s1.studentDetails()
+s1.ispassed()
+s1.Welcometoschool()
