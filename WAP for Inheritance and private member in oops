@@ -1,0 +1,27 @@
+class Vehicle:
+    def __init__(self,color,maxspeed):
+        self.color=color
+        self.__maxspeed=maxspeed
+    def getmaxspeed(self):
+        return self.__maxspeed
+    def setmaxspeed(self,maxspeed):
+        self.__maxspeed=maxspeed
+        
+class Car(Vehicle):
+    def __init__(self,color,maxspeed,numGears,isconvertible):
+        
+        super(). __init__ (color,maxspeed)
+        self.numGears=numGears
+        self.isconvertible=isconvertible
+    def printCar(self):
+        print("color:",self.color)
+        print("maxspeed:",self.getmaxspeed())
+        print("numGears",self.numGears)
+        print("isconvertible:",self.isconvertible)
+c=Car("red",20,3,True)
+c.printCar()
+
+#color: red
+#maxspeed: 20
+#numGears 3
+#isconvertible: True
