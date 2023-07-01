@@ -1,0 +1,23 @@
+class mother:
+    def __init__(self):
+        self.name="Manju"
+        super().__init__()
+    def print(self):
+        print("print of mother called")
+class father:
+    def __init__(self):
+        self.name="ajay"
+        #super().__init__()
+    def print(self):
+        print("print of father called ")
+class child(mother,father):
+    def __init__(self):
+        super().__init__()
+    def print(self):
+        print("name of child is",self.name)
+c=child()
+c.print()
+print(child.mro())
+
+#name of child is ajay
+#[<class '__main__.child'>, <class '__main__.mother'>, <class '__main__.father'>, <class 'object'>]
