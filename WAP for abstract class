@@ -1,0 +1,37 @@
+from abc import ABC,abstractmethod
+class automobile(ABC):
+    def __init__(self):
+        print("automobile created")
+    @abstractmethod
+    def start(self):
+        pass
+    @abstractmethod
+    def stop(self):
+        pass
+    @abstractmethod
+    def drive(self):
+        pass
+class car(automobile):
+    def __init__(self,name):
+        print("car created")
+        self.name=name
+    def start(self):
+        pass
+    def stop(self):
+        pass
+    def drive(self):
+        pass
+class bus(automobile):
+    def __init__(self,name):
+        print("bus created")
+        self.name=name
+    def start(self):
+        pass
+    def stop(self):
+        pass
+    def drive(self):
+        pass
+c=car("honda")
+b=bus("delhi metro bus")
+    
+    
