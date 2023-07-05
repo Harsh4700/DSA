@@ -1,0 +1,27 @@
+class Node:
+    def __init__(self, data=None):
+        self.data = data
+        self.next = None
+def insert_at_position(head, data, position):
+    if position == 0:
+        new_node = Node(data)
+        new_node.next = head
+        return new_node
+
+    if head is None:
+        raise IndexError("Invalid position")
+    head.next = insert_at_position(head.next, data, position - 1)
+    return head
+def print_linked_list(head):
+    current = head
+    while current:
+        print(current.data, end=" -> ")
+        current = current.next
+    print("None")
+head = None
+
+head = insert_at_position(head, 1, 0)
+head = insert_at_position(head, 2, 1)
+head = insert_at_position(head, 3, 2)
+head = insert_at_position(head, 4, 1)
+print_linked_list(head)
