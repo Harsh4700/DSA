@@ -1,0 +1,45 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = new_node
+
+    def get_ith_node(self, index):
+        count = 0
+        current = self.head
+        while current:
+            if count == index:
+                return current
+            count += 1
+            current = current.next
+        return None
+
+
+# Example usage:
+linked_list = LinkedList()
+linked_list.append(5)
+linked_list.append(10)
+linked_list.append(15)
+linked_list.append(20)
+
+i = 2  # Index of the node to find
+node = linked_list.get_ith_node(i)
+
+if node:
+    print("Data at index", i, ":", node.data)
+else:
+    print("Invalid index or node not found.")
