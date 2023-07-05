@@ -1,0 +1,38 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = new_node
+
+    def get_length(self):
+        count = 0
+        current = self.head
+        while current:
+            count += 1
+            current = current.next
+        return count
+
+
+# Example usage:
+linked_list = LinkedList()
+linked_list.append(5)
+linked_list.append(10)
+linked_list.append(15)
+linked_list.append(20)
+
+length = linked_list.get_length()
+print("Length of the linked list:", length)
