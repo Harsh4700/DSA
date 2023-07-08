@@ -1,0 +1,23 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+def find_index(head, N):
+    current = head
+    index = 0
+    while current is not None:
+        if current.data == N:
+            return index
+        current = current.next
+        index += 1
+    return -1
+head = Node(1)
+head.next = Node(2)
+head.next.next = Node(3)
+head.next.next.next = Node(4)
+index = find_index(head, 1)
+print("Index of value 3:", index)
+# Find the index of value 6 (not present in the list)
+index = find_index(head, 6)
+print("Index of value 6:", index)
