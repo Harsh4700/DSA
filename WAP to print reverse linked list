@@ -1,0 +1,13 @@
+class ListNode:
+    def __init__(self,val=0,next=None):
+        self.val=val
+        self.next=next
+def print_reverse_order(head):
+    if not head:
+        return 
+    print_reverse_order(head.next)
+    print(head.val)
+head=ListNode(1)
+head.next=ListNode(2)
+head.next.next=ListNode(3)
+print_reverse_order(head)
