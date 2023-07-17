@@ -1,0 +1,38 @@
+from Node import Node
+class Queue:
+    def __init__(self):
+        self.__head=None
+        self.__tail=None
+        self.__count=0
+    def enqueue(self,data):
+        newnode=Node(element)
+        if Self.__head is None:
+            self.__head=newNode
+        else:
+            self.__tail.next=newNode
+        self.__tail=newNode
+        self.__count=self.__count+1
+    def dequeue(self):
+        if Self.__head is None:
+            print("hey!queue is empty")
+            return
+        data=self.__head.data
+        self.__head=self.__head.next
+        self.__count=self.__count-1
+        return data
+    def isempty(self):
+        return self.size()==0
+    def size(self):
+        return self.__count
+    def front(self):
+        if self.__head is None:
+            print("hey!Queue is empty")
+            return
+        data=self.__head.data
+q=Queue()
+q.enqueue(1)
+q.enqueue(5)
+q.enqueue(4)
+while q.isempty() is False:
+    print(q.dequeue())
+q.front()
