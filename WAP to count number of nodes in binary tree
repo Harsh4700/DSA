@@ -1,0 +1,19 @@
+def treeInput():
+    rootData=int(input())
+    if rootData==-1:
+        return None
+    root=BinaryTreeNode(rootData)
+    leftTree=treeInput()
+    RightTree=treeInput()
+    root.left=leftTree
+    root.right=RightTree
+    return root
+def numnodes(root):
+    if root==None:
+        return 0
+    leftcount=numnode(root.left)
+    rightcount=numnode(root.right)
+    return leftcount+rightcount
+root=treeInput()
+printTreeDetailed(root)
+print(numnodes(root))
