@@ -1,0 +1,46 @@
+class BinaryTreeNode:
+    def __init__(self,data):
+        self.data=data
+        self.left=None
+        self.right=None
+def printTreeDetailed(root):
+    if root == None:
+        return
+    print(root.data,end=" ")
+    if root.left!=None:
+        print("L",root.left.data,end=" ")
+    if root.right!=None:
+        print("R",root.right.data,end=" ")
+    print()
+    printTreeDetailed(root.left)
+    printTreeDetailed(root.right)
+def treeInput():
+    rootData=int(input())
+    if rootData==-1:
+        return None
+    root=BinaryTreeNode(rootData)
+    leftTree=treeInput()
+    RightTree=treeInput()
+    root.left=leftTree
+    root.right=RightTree
+    return root
+def height(root): 
+    if root==None:
+        return 0
+    return 1+max(height(root.left),height(root.right))
+def isbalanced(root):
+    if root==None:
+        return True
+    lh=isbalanced(root.left)
+    Rh=isbalanced(root.right)
+    if lh-Rh>1 or Rh-lh>1:
+        return False
+    isleftbalanced=isbalanced(root.left)
+    isrightbalanced=isbalanced(root.right)
+    if isleftbalanced and isrightbalanced:
+        return True
+    else:
+        return False
+root=treeInput()
+printTreeDetailed(root)
+print(isbalanced(root))
