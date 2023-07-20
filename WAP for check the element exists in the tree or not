@@ -1,0 +1,20 @@
+class TreeNode:
+    def __init__(self,val=0,left=None,right=None):
+        self.val=val
+        self.left=left
+        self.right=right
+def search_node(root,Target):
+    if not root:
+        return False
+    if root.val==Target:
+        return True
+    return search_node(root.left,Target) or search_node(root.left,Target)
+root=TreeNode(1)
+root.left=TreeNode(2)
+root.right=TreeNode(3)
+root.left.left=TreeNode(4)
+x=6
+if search_node(root,x):
+    print(f"node with data X exists in the tree")
+else:
+    print(f"Not found")
