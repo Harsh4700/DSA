@@ -1,0 +1,35 @@
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+def diameter_of_binary_tree(root):
+    if not root:
+        return 0
+    # Calculate the height of the left and right subtrees
+    left_height = height_of_binary_tree(root.left)
+    right_height = height_of_binary_tree(root.right)
+    # Calculate the diameter passing through the current root node
+    diameter_through_root = left_height + right_height
+    # Calculate the diameters of the left and right subtrees
+    left_diameter = diameter_of_binary_tree(root.left)
+    right_diameter = diameter_of_binary_tree(root.right)
+    # Return the maximum diameter among the three: diameter through root, left diameter, and right diameter
+    return max(diameter_through_root, left_diameter, right_diameter)
+def height_of_binary_tree(root):
+    if not root:
+        return 0
+    # Recursively calculate the height of the left and right subtrees
+    left_height = height_of_binary_tree(root.left)
+    right_height = height_of_binary_tree(root.right)
+    # Return the maximum height plus 1 (to account for the current node)
+    return max(left_height, right_height) + 1
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+root.left.left = TreeNode(4)
+root.left.right = TreeNode(5)
+root.right.left = TreeNode(6)
+root.right.right = TreeNode(7)
+
+print("Diameter of the binary tree:", diameter_of_binary_tree(root))
